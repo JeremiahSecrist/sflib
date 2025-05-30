@@ -18,7 +18,7 @@
     core-inputs =
       inputs
       // {
-        src = ./.;
+        src = builtins.path { path = ./.; name = "source"; };
       };
 
     # Create the library, extending the nixpkgs library and merging
@@ -70,7 +70,7 @@
 
       config = {
         root = ./.;
-        src = ./.;
+        src = builtins.path { path = ./.; name = "source"; };
         namespace = "snowfall";
         lib-dir = "snowfall-lib";
 
@@ -82,7 +82,7 @@
 
       internal-lib = let
         lib = mkLib {
-          src = ./.;
+          src = builtins.path { path = ./.; name = "source"; };
 
           inputs =
             inputs

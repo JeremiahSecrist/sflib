@@ -9,6 +9,6 @@
         sha256 = lock.nodes.flake-compat.locked.narHash;
       }
   )
-  {src = ./.;}
+  {src = builtins.path { path = ./.; name = "source"; }}
 )
 .defaultNix
